@@ -1,5 +1,8 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:xe
-    username: system
-    password: Adm1n45
+    url: jdbc:mysql://localhost:3306/clinica
+    username: root
+    password: a1b9c2d8.
+  flyway:
+    baselineOnMigrate: true
+
