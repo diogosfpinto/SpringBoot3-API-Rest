@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.voll.api.endereco.DadosEndereco;
-import org.hibernate.validator.constraints.UniqueElements;
 
 
 //DTO para médico
@@ -15,7 +14,6 @@ public record DadosCadastroMedico(
         String nome,
         @NotBlank
         @Email
-        @UniqueElements
         String email,
         @NotBlank
         String telefone,
