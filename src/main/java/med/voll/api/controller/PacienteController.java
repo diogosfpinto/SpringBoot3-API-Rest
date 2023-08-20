@@ -2,10 +2,7 @@ package med.voll.api.controller;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.voll.api.paciente.DadosCadastroPaciente;
-import med.voll.api.paciente.DadosListaPaciente;
-import med.voll.api.paciente.Paciente;
-import med.voll.api.paciente.PacienteRepository;
+import med.voll.api.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +30,13 @@ public class PacienteController {
                         paciente.getEmail(),
                         paciente.getCpf(),
                         paciente.getTelefone()));
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoPaciente dadosAtualizacaoPaciente){
+        Paciente paciente = repository.getReferenceById(dadosAtualizacaoPaciente.id());
+        paciente.atualizarInformacoes(dadosAtualizacaoPaciente);
     }
 }
 
