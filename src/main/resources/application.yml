@@ -16,3 +16,8 @@ spring:
         page-parameter: pagina
         size-parameter: tamanho
         sort-parameter: ordem
+
+#Configuração para ocultar stack trace da resposta quando este retorna uma exceção
+server:
+  error:
+    include-stacktrace: never
