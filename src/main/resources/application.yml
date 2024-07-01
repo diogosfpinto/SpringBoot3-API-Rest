@@ -21,3 +21,9 @@ spring:
 server:
   error:
     include-stacktrace: never
+
+#Secret para geração de token JWT
+api:
+  security:
+    token:
+      secret: ${JWT_SECRET:12345678}
